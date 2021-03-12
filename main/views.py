@@ -1,8 +1,12 @@
 from django.shortcuts import render
 
+from .models import Portfolio
+
 
 def home(request):
-    return render(request, 'main/index.html')
+    portfolios = Portfolio.objects.all()
+    context = {'portfolios': portfolios}
+    return render(request, 'main/index.html', context)
 
 
 def innerPage(request):
@@ -10,4 +14,6 @@ def innerPage(request):
 
 
 def portfolio(request):
-    return render(request, 'main/portfolio-details.html')
+    portfolios = Portfolio.objects.all()
+    context = {'portfolios': portfolios}
+    return render(request, 'main/portfolio-details.html', context)
