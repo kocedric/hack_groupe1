@@ -27,11 +27,11 @@
             <div class="portfolio-details-slider swiper-container">
               <div class="swiper-wrapper align-items-center">
 
-                {% for portfolio in portfolios %}
+                {% if portfolios %}
                 <div class="swiper-slide">
-                  <img src="{{ portfolio.image.url }}" alt="">
+                  <img src="{{ portfolios.image.url }}" alt="">
                 </div>
-                {% endfor %}
+                {% endif %}
 
 <!-- 
                 <div class="swiper-slide">
@@ -41,33 +41,35 @@
                 <div class="swiper-slide">
                   <img src="static/assets/img/portfolio/portfolio-3.jpg" alt="">
                 </div>
+                -->
 
               </div>
               <div class="swiper-pagination"></div>
             </div>
+
           </div>
-          -->
+          
 
 
-          {% for portfolio in portfolios %}
+          {% if portfolios %}
           <div class="col-lg-4">
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Category</strong>: {{ portfolio.galerie }}</li>
+                <li><strong>Category</strong>: {{ portfolios.galerie }}</li>
                 <li><strong>Client</strong>: RESEAUTIC</li>
-                <li><strong>Project date</strong>{{ portfolio.date }}</li>
+                <li><strong>Project date</strong>{{ portfolios.date }}</li>
                 <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
               </ul>
             </div>
             <div class="portfolio-description">
-              <h2>{{ portfolio.title }}</h2>
+              <h2>{{ portfolios.title }}</h2>
               <p>
-                {{ portfolio.description }}
+                {{ portfolios.description }}
               </p>
             </div>
           </div>
-          {% endfor %}
+          {% endif %}
 
         </div>
 

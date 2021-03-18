@@ -1,0 +1,6 @@
+<!--herite du fichier main.html-->
+{% extends 'base.html' %}
+{% block main %}
+  <p>Desolé, nous n'avons pas pu trouver cette page!</p>
+  <a href="{% url 'home' %}" title="Accueil"><i class="bi bi-link"></i></a>
+{% endblock main %}

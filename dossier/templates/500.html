@@ -1,0 +1,6 @@
+<!--herite du fichier main.html-->
+{% extends 'base.html' %}
+{% block main %}
+  <p>Desolé, nous avons rencontrer une erreur lors de l'exécution de votre requette!</p>
+  <a href="{% url 'home' %}" title="Accueil"><i class="bi bi-link"></i></a>
+{% endblock main %}
